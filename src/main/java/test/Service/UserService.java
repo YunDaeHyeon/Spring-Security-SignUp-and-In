@@ -37,7 +37,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
         UserDTO userDTO = userMapper.loginAction(userId);
         if(userDTO==null){
-            throw new UsernameNotFoundException("권한이 없습니다.");
+            throw new UsernameNotFoundException("해당하는 유저를 찾을 수 없습니다.");
         }
         return userDTO;
     }
